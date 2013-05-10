@@ -1,0 +1,25 @@
+html,body,div,p,h3, input {
+margin: 0;
+border: 0;
+padding: 0;
+}
+
+#outsideContainer {
+margin: 200px auto;
+background: gray;
+width: 300px;
+padding: 30px;
+text-align: center;
+}
+
+#guessContainer {
+padding: 20px 0;
+}
+
+#guessContainer h3 {
+padding: 10px 0px;
+}
+
+#guessContainer input {
+margin: 15px opx;
+}
