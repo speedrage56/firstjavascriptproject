@@ -1,9 +1,8 @@
 jQuery(document).ready(function(){ 
- $('button').on('click', function(){
+ $('a').on('click', function(){
     function numberCheck(){
-	var promptValue = prompt("What is the value?");
+	var promptValue = $(this).closest('#guessContainer').find('.value').val();
 	var number = Math.floor(Math.random()*11);
-	alert(number);
 	while(promptValue != number)
 	{
     var guess = prompt("Please guess again");
@@ -22,5 +21,7 @@ jQuery(document).ready(function(){
 
 numberCheck();
 	});
-	});
+	}); 
+	
+	
  
