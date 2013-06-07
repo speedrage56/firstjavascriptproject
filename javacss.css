@@ -17,15 +17,14 @@ padding: 20px 0;
 }
 
 #guessContainer h3 {
-padding: 10px 0px;
+padding: 5px 0px;
 }
 
 #guessContainer input[type="text"] {
-margin: 5px 0px;
+margin: 10px 0px;
 }
 
 #guessShow {
-display: none;
 border: 1px solid black;
 padding: 10px;
 }
@@ -41,4 +40,12 @@ color: blue;
 #guessShow .gotIt {
 font-size: 2em;
 font-weight: 700;
+}
+
+ .hideStuff {
+display: none;
+}
+
+.showStuff {
+display: block;
 }

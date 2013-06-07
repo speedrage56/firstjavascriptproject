@@ -3,7 +3,8 @@
 		<meta http-equiv="Content-Type" content="text/html"; charset="utf-8"/>
 		<link rel="stylesheet" href="javacss.css" type="text/css" />
 		<script src="jquery-1.9.1.min.js"></script>
-		 <script src = "javaapp.js" type = "text/javascript"></script> 
+		<script src = "javaapp.js" type = "text/javascript"></script> 		 
+			
 	<title> Java App </title>
 		
 	</head>
@@ -12,13 +13,17 @@
 	<div id="outsideContainer">
 	<div id="guessContainer">
 		<h3> Guess a number between 1 and 10 </h3>
-		<input type="text" class="value" name="fname"/><br>
-		<a href=" " class="query"> Submit here </a> 
+		
+		<input id="txtfield" name="txtfield" type="text" class="value"/><br>
+		<button class="query"> Check your guess </button>
+		<button class = "reset"> Restart game </button>
+		
+		
 	</div>
 	<div id="guessShow">
-		<p class="hotter"> Getting Hotter!! </p>
-		<p class="colder"> Getting Colder, BRRR!!! </p>
-		<p class="gotIt"> Awesome! You have guessed the number </p>
+		<p class="hotter hideStuff" > Getting Hotter!! </p>
+		<p class="colder hideStuff"> Getting Colder, BRRR!!! </p>
+		<p class="gotIt hideStuff"> Awesome! You have guessed the number </p>
 	</div>
 	</div>
 	</body>

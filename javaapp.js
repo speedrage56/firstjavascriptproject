@@ -1,27 +1,36 @@
 jQuery(document).ready(function(){ 
- $('a').on('click', function(){
-    function numberCheck(){
-	var promptValue = $(this).closest('#guessContainer').find('.value').val();
-	var number = Math.floor(Math.random()*11);
-	while(promptValue != number)
+var scopedVariable;
+var number = Math.floor(Math.random()*11);
+function numberCheck(submitButton) {
+$(submitButton).closest('#outsideContainer').find('.hotter').addClass('hideStuff');
+ $(submitButton).closest('#outsideContainer').find('.colder').addClass('hideStuff');
+var guess = $(submitButton).closest('#guessContainer').find('.value').val();
+	if( +guess === number)
 	{
-    var guess = prompt("Please guess again");
-    if(Math.abs(promptValue - number) > Math.abs(guess-number) && guess != number)
-		{
-      alert("hotter!");
-		}
-	else if(Math.abs(promptValue - number) < Math.abs(guess-number))
-		{
-      alert("colder!");
-		}
-    promptValue = guess;
-    };
-  alert("Ya got it!");
-};
+    $(submitButton).closest('#outsideContainer').find('.gotIt').removeClass('hideStuff');
+	}
+    else {
+		$(submitButton).closest('#guessContainer').find('.value').val('Please guess again');
+		if(Math.abs(guess - number) < Math.abs(scopedVariable - number)) {
+			$(submitButton).closest('#outsideContainer').find('.hotter').removeClass('hideStuff');
+			}
+		else if(Math.abs(guess - number) > Math.abs(scopedVariable - number)) {
+			$(submitButton).closest('#outsideContainer').find('.colder').removeClass('hideStuff');
+			}
+		scopedVariable = guess;
+		} 
+	
+		
+}
 
-numberCheck();
-	});
+$('.query').on('click', function() {
+	numberCheck(this);
 	}); 
-	
-	
- 
+$('.reset').on('click', function() {
+  location.reload(true);
+  
+  });
+  $('.value').on('click', function() {
+  $(this).val(" ");
+  });
+ });
